@@ -8,6 +8,12 @@ The dataset is created using the dev set in the [Spider](https://yale-lily.githu
 
 ## Preprocessing
 
+First, unzip the data using the following command.
+```bash
+mkdir data
+tar -xvf data.tar.gz -C data
+```
+
 Run ``data_preprocess.py`` to copy pre-perturbed databases and tables from the original spider devlopment set.
 
 ```
