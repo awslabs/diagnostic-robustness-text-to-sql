@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import shutil
+import os
 
 def main():
     perturbation_categories={}
@@ -11,6 +12,8 @@ def main():
 
     for category in perturbation_categories:
         for subcategory in perturbation_categories[category]:
+            if not os.path.exists(category+'_'+subcategory):
+                os.mkdir(category+'_'+subcategory)
             if category == "DB":
                 shutil.copy(f"data/Spider-dev/tables.json", f"{category+'_'+subcategory}/tables_pre_perturbation.json")
                 shutil.copytree(f"data/Spider-dev/databases", f"{category+'_'+subcategory}/databases_pre_perturbation")
