@@ -12,11 +12,11 @@ def main():
     for category in perturbation_categories:
         for subcategory in perturbation_categories[category]:
             if category == "DB":
-                shutil.copy(f"data/Spider-dev/tables.json", f"{category+'_'+subcategory}/tables_pre_perturbation.json")
-                shutil.copytree(f"data/Spider-dev/databases", f"{category+'_'+subcategory}/databases_pre_perturbation")
+                shutil.copy(f"data/Spider-dev/tables.json", f"data/{category+'_'+subcategory}/tables_pre_perturbation.json")
+                shutil.copytree(f"data/Spider-dev/databases", f"data/{category+'_'+subcategory}/databases_pre_perturbation")
             else:
-                shutil.copy(f"data/Spider-dev/tables.json", f"{category+'_'+subcategory}/tables.json")
-                shutil.copytree(f"data/Spider-dev/databases", f"{category+'_'+subcategory}/databases")
+                shutil.copy(f"data/Spider-dev/tables.json", f"data/{category+'_'+subcategory}/tables.json")
+                shutil.copytree(f"data/Spider-dev/databases", f"data/{category+'_'+subcategory}/databases")
 
 if __name__ == "__main__":
     main()
